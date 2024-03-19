@@ -1,0 +1,5 @@
+.chk_menu:checked + nav{
+    transition: .2s;
+    width: 0px;
+    overflow: hidden;
+}

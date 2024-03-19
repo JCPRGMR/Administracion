@@ -1,0 +1,85 @@
+:root{
+    --Color1: #B81573;
+    --Color2: #BA68C8;
+    --Color3: #f2af57;
+    --Color4: #e74f4c;
+    --Color5: #59f38f;
+    --Color6: #E0E0E0;
+    --Color7: #333333;
+}
+.hover-white:hover{
+    background-color: white;
+    color: black;
+}
+.hover1:hover{
+    background-color: var(--Color1);
+}
+.hover2:hover{
+    background-color: var(--Color2);
+}
+.hover3:hover{
+    background-color: var(--Color3);
+}
+.hover4:hover{
+    background-color: var(--Color4);
+}
+.hover5:hover{
+    background-color: var(--Color5);
+}
+.hover6:hover{
+    background-color: var(--Color6);
+}
+/**
+ * TEXT COLOR
+ */
+.black{
+    color: black;
+}
+.white{
+    color: white;
+}
+.color1{
+    background-color: var(--Color1);
+}
+.color2{
+    background-color: var(--Color2);
+}
+.color3{
+    background-color: var(--Color3);
+}
+.color4{
+    background-color: var(--Color4);
+}
+.color5{
+    background-color: var(--Color5);
+}
+.color6{
+    background-color: var(--Color6);
+}
+.color7{
+    background-color: var(--Color7);
+}
+/**
+ * BG COLOR'S
+ */
+.color1{
+    background-color: var(--Color1);
+}
+.color2{
+    background-color: var(--Color2);
+}
+.color3{
+    background-color: var(--Color3);
+}
+.color4{
+    background-color: var(--Color4);
+}
+.color5{
+    background-color: var(--Color5);
+}
+.color6{
+    background-color: var(--Color6);
+}
+/**
+ * GRAGIENDT BG's
+ */
