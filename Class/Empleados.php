@@ -12,4 +12,6 @@
                 throw $th;
             }
         }
+        public static function Insertar(){
+        }
     }
