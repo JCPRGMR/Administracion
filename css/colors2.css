@@ -13,21 +13,62 @@
 }
 .hover1:hover{
     background-color: var(--Color1);
+    color: white;
 }
 .hover2:hover{
     background-color: var(--Color2);
+    color: black;
 }
 .hover3:hover{
     background-color: var(--Color3);
+    color: black;
 }
 .hover4:hover{
     background-color: var(--Color4);
+    color: white;
 }
 .hover5:hover{
     background-color: var(--Color5);
+    color: black;
 }
 .hover6:hover{
     background-color: var(--Color6);
+    color: black;
+}
+.hover7:hover{
+    background-color: var(--Color7);
+    color: white;
+}
+/**
+ * CHECKS x labels COLORS
+ */
+.check1:checked + label{
+    background-color: var(--Color1);
+    color: white;
+}
+.check2:checked + label{
+    background-color: var(--Color2);
+    color: black;
+}
+.check3:checked + label{
+    background-color: var(--Color3);
+    color: black;
+}
+.check4:checked + label{
+    background-color: var(--Color4);
+    color: white;
+}
+.check5:checked + label{
+    background-color: var(--Color5);
+    color: black;
+}
+.check6:checked + label{
+    background-color: var(--Color6);
+    color: black;
+}
+.check7:checked + label{
+    background-color: var(--Color7);
+    color: white;
 }
 /**
  * TEXT COLOR
