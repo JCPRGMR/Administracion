@@ -7,6 +7,7 @@
     --Color6: #E0E0E0;
     --Color7: #333333;
 }
+
 .hover-white:hover{
     background-color: white;
     color: black;
@@ -103,23 +104,23 @@
 /**
  * BG COLOR'S
  */
-.color1{
-    background-color: var(--Color1);
+.text1{
+    color: var(--Color1);
 }
-.color2{
-    background-color: var(--Color2);
+.text2{
+    color: var(--Color2);
 }
-.color3{
-    background-color: var(--Color3);
+.text3{
+    color: var(--Color3);
 }
-.color4{
-    background-color: var(--Color4);
+.text4{
+    color: var(--Color4);
 }
-.color5{
-    background-color: var(--Color5);
+.text5{
+    color: var(--Color5);
 }
-.color6{
-    background-color: var(--Color6);
+.text6{
+    color: var(--Color6);
 }
 /**
  * GRAGIENDT BG's

@@ -1,11 +1,12 @@
+<?php include_once("../Class/Empleados.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style3.css">
+    <link rel="stylesheet" href="../css/style5.css">
     <link rel="stylesheet" href="../css/menus.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Administracion</title>
 </head>
 <body class="m0 f-row w100p h100vh">
     <input type="checkbox" name="" id="nav_on" class="v-hidden absolute chk_menu">
