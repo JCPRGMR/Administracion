@@ -21,7 +21,7 @@
                 </thead>
                 <tbody>
                     <td class="p5">
-                        <input type="search" name="Ciudad" id="Ciudad" placeholder="Ciudad" class="p5 br10 w80px" value="<?PHP // Ciudades::MostrarDES()?>">
+                        <input type="search" name="Ciudad" id="Ciudad" placeholder="Ciudad" class="p5 br10 w80px" value="<?= Ciudades::MostrarDES()?>">
                         <div class="relative index100">
                             <div class="absolute f-col br10 overflow-auto h70px v-hidden" id="SelectCiudad">
                                 <?php foreach(Ciudades::Mostrar() as $item):?>
@@ -32,12 +32,13 @@
                         </div>
                     </td>
                     <td class="p5">
-                        <input type="search" name="Personal" id="Personal" placeholder="Personal..." class="p5 br10">
+                        <input type="search" name="Personal" id="Personal" placeholder="Personal..." class="p5 br10" required>
                         <div class="relative index100">
-                            <div class="absolute f-col br10 overflow-auto h70px v-hidden" id="SelectPersonal">
+                            <input type="radio" name="empleados" id="sin_empleado" class="v-hidden absolute">
+                            <div class="absolute f-col br10 overflow-auto h200px min-content-w v-hidden" id="SelectPersonal">
                                 <?php foreach(Empleados::Options() as $item):?>
-                                    <input type="radio" name="empleados" id="empleado_id_<?= $item->id_empleado?>" class="v-hidden absolute check1">
-                                    <label for="empleado_id_<?= $item->id_empleado?>" class="fz12 hover7 negrita color6 p10 pointer space-nw"><?=$item->nombres?> | <?=$item->apellidos?> | <?=$item->des_area?> | <?=$item->des_cargo?></label>
+                                    <input type="radio" name="empleados" value="<?= $item->id_empleado?>" id="empleado_id_<?= $item->id_empleado?>" class="v-hidden absolute check1">
+                                    <label for="empleado_id_<?= $item->id_empleado?>" onclick="ValorLabelAlInput(this)" class="left fz12 hover7 negrita w300px color6 p20 pointer"><?=$item->nombres?> | <?=$item->apellidos?> | <?=$item->des_area?> | <?=$item->des_cargo?></label>
                                 <?php endforeach;?>
                             </div>
                         </div>
@@ -123,3 +124,4 @@
         </table>
     </div>
 </div>
+<script src="../Js/Empleados.js"></script>

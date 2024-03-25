@@ -34,4 +34,26 @@
                 throw $th;
             }
         }
+        // public static function CiudadLaPaz(){
+        //     try {
+        //         $sql = "SELECT des_ciudad FROM ciudad ";
+        //         $stmt = Conexion::Conectar()->prepare($sql);
+        //         $stmt->execute();
+        //         $resultado = $stmt->fetchColumn();
+        //         return $resultado;
+        //     } catch (PDOException $th) {
+        //         throw $th;
+        //     }
+        // }
+        // public static function CiudadElAlto(){
+        //     try {
+        //         $sql = "SELECT des_ciudad FROM ciudad ";
+        //         $stmt = Conexion::Conectar()->prepare($sql);
+        //         $stmt->execute();
+        //         $resultado = $stmt->fetchColumn();
+        //         return $resultado;
+        //     } catch (PDOException $th) {
+        //         throw $th;
+        //     }
+        // }
     }

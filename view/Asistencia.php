@@ -137,4 +137,5 @@
 
 <!-- INTERRUPTOR PARA CANCELAR Y OCULTAR EL TEXTAREA -->
 <input type="radio" name="eosalida" id="cerrar_textarea" class="absolute v-hidden">
+<script src="../Js/Empleados.js"></script>
 <script src="../Js/PruebaControl2.js"></script>
