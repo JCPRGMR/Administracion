@@ -26,9 +26,5 @@ document.getElementById("Personal").addEventListener('input', function(){
 });
 function ValorLabelAlInput(id){
     document.getElementById("Personal").value = id.textContent
-    document.getElementById("SelectPersonal").style.visibility = 'hidden'
-}
-function ValorLabelAlInput_ciudad(id){
-    document.getElementById("Ciudad").value = id.textContent
-    document.getElementById("SelectCiudad").style.visibility = 'hidden'
+    // document.getElementById("SelectPersonal").style.visibility = 'hidden'
 }

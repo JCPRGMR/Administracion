@@ -34,6 +34,18 @@
                 throw $th;
             }
         }
+        public static function BuscarCiudad($des_ciudad){
+            try {
+                $sql = "SELECT id_ciudad FROM ciudades WHERE des_ciudad = ?";
+                $stmt = Conexion::Conectar()->prepare($sql);
+                $stmt->bindParam(1, $des_ciudad, PDO::PARAM_STR);
+                $stmt->execute();
+                $resultado = $stmt->fetchColumn();
+                return $resultado;
+            } catch (PDOException $th) {
+                throw $th;
+            }
+        }
         // public static function CiudadLaPaz(){
         //     try {
         //         $sql = "SELECT des_ciudad FROM ciudad ";
