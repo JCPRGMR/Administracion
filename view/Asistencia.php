@@ -21,7 +21,7 @@
                         </a>
                     </th>
                     <th class="p10 fz14">Ingreso</th>
-                    <!-- <th class="p10 fz14">Salida</th> -->
+                    <th class="p10 fz14">Salida</th>
                     <th class="p10 fz14">Registrar</th>
                 </thead>
                 <tbody>
@@ -50,7 +50,12 @@
                     </td>
                     <td class="p5">
                         <div class="f-row a-c br10 overflow-hidden color7">
-                            <textarea name="Justificacion_ingreso" oninput="lockTextArea(this)" id="ingreso" cols="20" rows="1" placeholder="Justificacion..." class="w100p p5" required></textarea>
+                            <textarea name="Justificacion_ingreso" id="ingreso" cols="20" rows="1" placeholder="Observaciones..." class="w100p p5"></textarea>
+                        </div>
+                    </td>
+                    <td class="p5">
+                        <div class="f-row a-c br10 overflow-hidden color7">
+                            <textarea name="Justificacion_salida" id="salida" cols="20" rows="1" placeholder="Observaciones..." class="w100p p5"></textarea>
                         </div>
                     </td>
                     <td class="center">
@@ -63,18 +68,18 @@
             <thead class="mayus white color1 br20 overflow-hidden sticky top0">
                 <th class="p10 fz14">Ciudad</th>
                 <th class="p10 fz14">Nombres</th>
-                <th class="p10 fz14">Area</th>
+                <th class="p10 fz14" style="border-right: 2px solid;">Area</th>
                 <th class="p10 fz14">Ingresos</th>
-                <th class="p10 fz14">Obs. Ingreso</th>
-                <th class="p10 fz14">Salida</th>
+                <th class="p10 fz14" style="border-right: 2px solid;">Obs. Ingreso</th>
                 <th class="p10 fz14">Obs. Salida</th>
+                <th class="p10 fz14">Salida</th>
             </thead>
             <tbody id="tbody">
                 <?php foreach(Controles::Mostrar() as $item):?>
                 <tr class="white fz12 arial hover6 pointer">
                     <td class="p5 center"><?= $item->des_ciudad ?></td>
                     <td class="p5 space-nw"><?= $item->nombres . ' ' . $item->apellidos ?></td>
-                    <td class="p5 center"><?= $item->des_area ?></td>
+                    <td class="p5 center" style="border-right: 2px solid;"><?= $item->des_area ?></td>
                     <td class="p5 center">
                         <?php if (!is_null($item->ingreso)): ?>
                             <?= $item->ingreso ?>
@@ -86,18 +91,23 @@
                         </form>
                         <?php endif; ?>
                     </td>
-                    <td class="p5 center f-row jc-c">
-                        <?php if (!is_null($item->obs_ingreso)): ?>
-                            <?= $item->obs_ingreso ?>
-                        <?php else: ?>
-                            <label for="edit_obs_ingreso_<?= $item->id_control?>" class="color3 p5 br7 black f-row a-c jc-c space-nw pointer registrar-ingreso" onclick="HabilitarSalida('obs_ingreso_<?= $item->id_control ?>', 'ingreso_<?= $item->id_control ?>')" value="">
-                                <svg width="20px" height="20px" viewBox="0 0 1024 1024" fill="#000000" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M574.4 590.4l-3.2 7.2 1.6 8L608 740.8l8 33.6 28-20L760 672l5.6-4 2.4-6.4 220-556.8 8.8-22.4-22.4-8.8-140-55.2-21.6-8-8.8 20.8-229.6 559.2z m244-528l140 55.2-13.6-30.4-220 556.8 8-10.4-116 82.4 36 13.6-33.6-135.2-0.8 15.2 229.6-560-29.6 12.8z" fill="" /><path d="M872 301.6l-107.2-40c-7.2-2.4-10.4-10.4-8-17.6l8-20.8c2.4-7.2 10.4-10.4 17.6-8l107.2 40c7.2 2.4 10.4 10.4 8 17.6l-8 20.8c-2.4 7.2-10.4 10.4-17.6 8zM718.4 645.6l-107.2-40c-7.2-2.4-10.4-10.4-8-17.6l8-20.8c2.4-7.2 10.4-10.4 17.6-8l107.2 40c7.2 2.4 10.4 10.4 8 17.6l-8 20.8c-2.4 7.2-10.4 10.4-17.6 8zM900.8 224l-107.2-40c-7.2-2.4-10.4-10.4-8-17.6l8-20.8c2.4-7.2 10.4-10.4 17.6-8l107.2 40c7.2 2.4 10.4 10.4 8 17.6l-8 20.8c-2.4 7.2-10.4 11.2-17.6 8z" fill="" /><path d="M930.4 965.6H80c-31.2 0-56-24.8-56-56V290.4c0-31.2 24.8-56 56-56h576c13.6 0 24 10.4 24 24s-10.4 24-24 24H80c-4 0-8 4-8 8v619.2c0 4 4 8 8 8h850.4c4 0 8-4 8-8V320c0-13.6 10.4-24 24-24s24 10.4 24 24v589.6c0 31.2-24.8 56-56 56z" fill="" /><path d="M366.4 490.4H201.6c-13.6 0-25.6-11.2-25.6-25.6 0-13.6 11.2-25.6 25.6-25.6h165.6c13.6 0 25.6 11.2 25.6 25.6-0.8 14.4-12 25.6-26.4 25.6zM409.6 584h-208c-13.6 0-25.6-11.2-25.6-25.6 0-13.6 11.2-25.6 25.6-25.6h208c13.6 0 25.6 11.2 25.6 25.6-0.8 14.4-12 25.6-25.6 25.6zM441.6 676.8h-240c-13.6 0-25.6-11.2-25.6-25.6 0-13.6 11.2-25.6 25.6-25.6h240c13.6 0 25.6 11.2 25.6 25.6-0.8 14.4-12 25.6-25.6 25.6z" fill="" /></svg>
-                            </label>
+                    <td class="p5 center" style="border-right: 2px solid;">
+                        <?php if (strlen($item->obs_ingreso) === 0): ?>
                             <form action="../Request/Control.php" method="post" class="f-row" id="form_<?= $item->id_control ?>">
-                                <input type="radio" name="eoingreso" onchange="InsertarObservacion(this, 'form_<?= $item->id_control ?>')" id="edit_obs_ingreso_<?= $item->id_control?>" class="absolute v-hidden" value="<?= $item->id_control?>">
-                                <textarea name="obs_ingreso" id="" cols="0" rows="0" class="br10 txt_hidden" placeholder="Observaciones"></textarea>
-                                <label for="cerrar_textarea_ingreso<?= $item->id_control?>" class="switch_cancel color4 white negrita br7 black f-row a-c jc-c space-nw pointer registrar-ingreso">X</label>
-                                <input type="radio" name="eoingreso" id="cerrar_textarea_ingreso<?= $item->id_control?>" class="absolute v-hidden">
+                                <input type="search" name="obs_ingreso" id=""class="br10 p5 w100p" placeholder="Obs. Ingreso">
+                                <button type="submit" name="add_ingreso" class="br10 color5 pointer" value="<?= $item->id_control ?>">✔</button>
+                            </form>
+                        <?php else: ?>
+                            <?= $item->obs_ingreso ?>
+                        <?php endif; ?>
+                    </td>
+                    <td class="p5 center">
+                        <?php if (!is_null($item->obs_salida)): ?>
+                            <?= $item->obs_salida ?>
+                        <?php else: ?>
+                            <form action="../Request/Control.php" method="post" class="f-row" id="form_<?= $item->id_control ?>">
+                                <input type="search" name="obs_salida" id="" class="br5 p5 w100p" placeholder="Obs. Salida">
+                                <button type="submit" name="add_salida" class="br10 color5 pointer" value="<?= $item->id_control ?>">✔</button>
                             </form>
                         <?php endif; ?>
                     </td>
@@ -111,21 +121,6 @@
                                 Registrar salida
                             </button>
                         </form>
-                        <?php endif; ?>
-                    </td>
-                    <td class="p5 center f-row jc-c">
-                        <?php if (!is_null($item->obs_salida)): ?>
-                            <?= $item->obs_salida ?>
-                        <?php else: ?>
-                            <label for="edit_obs_salida_<?= $item->id_control?>" class="color3 p5 br7 black f-row a-c jc-c space-nw pointer registrar-salida" onclick="HabilitarSalida('obs_salida_<?= $item->id_control ?>', 'salida_<?= $item->id_control ?>')" value="">
-                                <svg width="20px" height="20px" viewBox="0 0 1024 1024" fill="#000000" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M574.4 590.4l-3.2 7.2 1.6 8L608 740.8l8 33.6 28-20L760 672l5.6-4 2.4-6.4 220-556.8 8.8-22.4-22.4-8.8-140-55.2-21.6-8-8.8 20.8-229.6 559.2z m244-528l140 55.2-13.6-30.4-220 556.8 8-10.4-116 82.4 36 13.6-33.6-135.2-0.8 15.2 229.6-560-29.6 12.8z" fill="" /><path d="M872 301.6l-107.2-40c-7.2-2.4-10.4-10.4-8-17.6l8-20.8c2.4-7.2 10.4-10.4 17.6-8l107.2 40c7.2 2.4 10.4 10.4 8 17.6l-8 20.8c-2.4 7.2-10.4 10.4-17.6 8zM718.4 645.6l-107.2-40c-7.2-2.4-10.4-10.4-8-17.6l8-20.8c2.4-7.2 10.4-10.4 17.6-8l107.2 40c7.2 2.4 10.4 10.4 8 17.6l-8 20.8c-2.4 7.2-10.4 10.4-17.6 8zM900.8 224l-107.2-40c-7.2-2.4-10.4-10.4-8-17.6l8-20.8c2.4-7.2 10.4-10.4 17.6-8l107.2 40c7.2 2.4 10.4 10.4 8 17.6l-8 20.8c-2.4 7.2-10.4 11.2-17.6 8z" fill="" /><path d="M930.4 965.6H80c-31.2 0-56-24.8-56-56V290.4c0-31.2 24.8-56 56-56h576c13.6 0 24 10.4 24 24s-10.4 24-24 24H80c-4 0-8 4-8 8v619.2c0 4 4 8 8 8h850.4c4 0 8-4 8-8V320c0-13.6 10.4-24 24-24s24 10.4 24 24v589.6c0 31.2-24.8 56-56 56z" fill="" /><path d="M366.4 490.4H201.6c-13.6 0-25.6-11.2-25.6-25.6 0-13.6 11.2-25.6 25.6-25.6h165.6c13.6 0 25.6 11.2 25.6 25.6-0.8 14.4-12 25.6-26.4 25.6zM409.6 584h-208c-13.6 0-25.6-11.2-25.6-25.6 0-13.6 11.2-25.6 25.6-25.6h208c13.6 0 25.6 11.2 25.6 25.6-0.8 14.4-12 25.6-25.6 25.6zM441.6 676.8h-240c-13.6 0-25.6-11.2-25.6-25.6 0-13.6 11.2-25.6 25.6-25.6h240c13.6 0 25.6 11.2 25.6 25.6-0.8 14.4-12 25.6-25.6 25.6z" fill="" /></svg>
-                            </label>
-                            <form action="../Request/Control.php" method="post" class="f-row" id="form_<?= $item->id_control ?>">
-                                <input type="radio" name="eosalida" onchange="InsertarObservacion(this, 'form_<?= $item->id_control ?>')" id="edit_obs_salida_<?= $item->id_control?>" class="absolute v-hidden" value="<?= $item->id_control?>">
-                                <textarea name="obs_salida" id="" cols="0" rows="0" class="br10 txt_hidden" placeholder="Observaciones"></textarea>
-                                <label for="cerrar_textarea<?= $item->id_control ?>" class="switch_cancel color4 white negrita br7 black f-row a-c jc-c space-nw pointer registrar-salida">X</label>
-                                <input type="radio" name="eosalida" id="cerrar_textarea<?= $item->id_control ?>" class="absolute v-hidden">
-                            </form>
                         <?php endif; ?>
                     </td>
                 </tr>

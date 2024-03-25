@@ -46,16 +46,16 @@
                             <div class="absolute f-col br10 overflow-auto h200px min-content-w v-hidden" id="SelectPersonal">
                                 <?php foreach(Empleados::Options() as $item):?>
                                     <input type="radio" name="empleados" value="<?= $item->id_empleado?>" id="empleado_id_<?= $item->id_empleado?>" class="v-hidden absolute check1">
-                                    <label for="empleado_id_<?= $item->id_empleado?>" onclick="ValorLabelAlInput(this)" class="left fz12 hover7 negrita w300px color6 p20 pointer"><?=$item->nombres?> | <?=$item->apellidos?> | <?=$item->des_area?> | <?=$item->des_cargo?></label>
+                                    <label for="empleado_id_<?= $item->id_empleado?>" onclick="ValorLabelAlInput(this)" class="left fz12 hover7 negrita w300px color6 p20 pointer"><?=$item->nombres?> <?=$item->apellidos?> | <?=$item->des_area?> | <?=$item->des_cargo?></label>
                                 <?php endforeach;?>
                             </div>
                         </div>
                     </td>
                     <td class="p5 f-row">
-                        <input type="search" name="Tiempo" id="tiempoInput" placeholder="Tiempo" class="p5 w70px br10" oninput="validarNumero(this)" required>
-                        <select name="medida" id="" class="br10 pointer">
-                            <option value="minuto(s)">min.</option>
-                            <option value="hora(s)">Hrs.</option>
+                        <input type="search" name="Tiempo" id="tiempoInput" placeholder="Tiempo" class="p5 w70px" oninput="validarNumero(this)" required>
+                        <select name="medida" id="medida" class="pointer">
+                            <option value="minuto(s)" id="minutos">min.</option>
+                            <option value="hora(s)" id="horas">Hrs.</option>
                         </select>
                     </td>
                     <td class="center p5">
@@ -77,13 +77,14 @@
                         </label>
                     </td>
                     <td class="p5">
-                        <textarea name="Justificacion" id="" cols="20" rows="1" placeholder="Justificacion..." class="br10 p5" required></textarea>
+                        <textarea name="Justificacion" id="Justificacion" cols="20" rows="1" placeholder="Justificacion..." class="br10 p5" required></textarea>
                     </td>
                     <td class="p5">
-                        <input type="date" name="Fecha_de_registro" id="" value="<?= date('Y-m-d') ?>" class="w100px p5 br10 color2 white br10">
+                        <input type="date" name="Fecha_de_registro" id="Fecha_de_registro" min="<?= date('Y-m-d')?>" value="<?= date('Y-m-d') ?>" class="w100px p5 br10 color2 white br10">
                     </td>
-                    <td class="center">
-                        <button type="submit" class="p10 br10 color5 pointer mayus negrita" name="Registrar">Registrar</button>
+                    <td class="center" id="td_btns" class="">
+                        <button type="submit" class="p10 br10 color5 pointer mayus negrita" name="Registrar" id="btn_omision">Registrar</button>
+                        <a href="" id="botones"></a>
                     </td>
                 </tbody>
             </table>
@@ -100,9 +101,9 @@
                 <th class="p10 fz14">Justificacion</th>
                 <th class="p10 fz14">Registro</th>
             </thead>
-            <tbody id="tbody">
+            <tbody id="tbody" class="noselect">
                 <?php foreach(Omisiones::Mostrar() as $item):?>
-                <tr class="white fz12 arial hover6 pointer">
+                <tr class="white fz12 arial hover6 pointer" id="<?= $item->id_omision?>" ondblclick="BuscarOmision(this.id)">
                     <td class="p5 center"><?= $item->des_ciudad ?></td>
                     <td class="p5 space-nw"><?= $item->nombres . ' ' . $item->apellidos ?></td>
                     <td class="p5 center"><?= $item->des_area ?></td>
@@ -140,3 +141,4 @@
 <script src="../Js/Ciudades.js"></script>
 <script src="../Js/Buscador.js"></script>
 <script src="../Js/OnlyNumbers.js"></script>
+<script src="../Js/BuscarOmision.js"></script>

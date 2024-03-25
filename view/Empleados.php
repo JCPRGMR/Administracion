@@ -1,4 +1,3 @@
-<?php  $_GET["back"]?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +10,7 @@
     <form action="" method="post" class="color7 p20 br10 f-col gap10">
         <div class="mayus p20 color5 br10 negrita">
             Registrar empleado
-            <a href="<?= ($_GET["back"] == "control") ? 'Asistencia.php' : 'Omisiones.php' ; ?>">
+            <a href="<?= ($_GET["back"] == "control") ? 'Asistencia.php' : 'Omisiones.php' ; ?>" class="p10 color4 br10 white pointer">
                 Cancelar
             </a>
         </div>

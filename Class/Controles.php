@@ -112,7 +112,7 @@
                 obs_ingreso = ? WHERE id_control = ?";
                 $stmt = Conexion::Conectar()->prepare($sql);
                 $stmt->bindParam(1, $post->obs_ingreso, PDO::PARAM_STR);
-                $stmt->bindParam(2, $post->eoingreso, PDO::PARAM_STR);
+                $stmt->bindParam(2, $post->add_ingreso, PDO::PARAM_STR);
                 $stmt->execute();
             } catch (PDOException $th) {
                 throw $th;
@@ -124,7 +124,7 @@
                 obs_salida = ? WHERE id_control = ?";
                 $stmt = Conexion::Conectar()->prepare($sql);
                 $stmt->bindParam(1, $post->obs_salida, PDO::PARAM_STR);
-                $stmt->bindParam(2, $post->eosalida, PDO::PARAM_STR);
+                $stmt->bindParam(2, $post->add_salida, PDO::PARAM_STR);
                 $stmt->execute();
             } catch (PDOException $th) {
                 throw $th;
