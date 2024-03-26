@@ -26,7 +26,8 @@ input, textarea, button{
  * SCROLL SETTING
  */
 .overflow-auto::-webkit-scrollbar{
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: rgb(122, 122, 122);
     max-width: 7px;
     max-height: 15px;
 }
@@ -36,6 +37,7 @@ input, textarea, button{
 }
 .overflow-auto::-webkit-scrollbar-button{
     width: 0px;
+    background-color: green;
     height: 0px;
 }
 /**

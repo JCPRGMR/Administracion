@@ -118,4 +118,83 @@
                 throw $th;
             }
         }
+        public static function pdf(object $post){
+            try {
+                $sql = "SELECT * FROM vista_omisiones WHERE ";
+                $params = array();
+                $conditionAdded = false;
+        
+                $conditions = array();
+
+                if (!empty($post->carnet)) {
+                    $conditions[] = "ci LIKE ?";
+                    $params[] = "%" . $post->carnet . "%";
+                }
+
+                if (!empty($post->nombres)) {
+                    $conditions[] = "nombres LIKE ?";
+                    $params[] = "%" . $post->nombres . "%";
+                }
+
+                if (!empty($post->apellidos)) {
+                    $conditions[] = "apellidos LIKE ?";
+                    $params[] = "%" . $post->apellidos . "%";
+                }
+
+                if (!empty($post->area)) {
+                    $conditions[] = "id_fk_area = ?";
+                    $params[] = $post->area;
+                }
+
+                if (!empty($post->Ingreso)) {
+                    $conditions[] = "ingreso = ?";
+                    $params[] = $post->Ingreso;
+                }
+                if (!empty($post->Salida)) {
+                    $conditions[] = "Salida = ?";
+                    $params[] = $post->Salida;
+                }
+                if (!empty($post->Marcacion)) {
+                    $conditions[] = "Marcacion = ?";
+                    $params[] = $post->Marcacion;
+                }
+                if (!empty($post->tiempo)) {
+                    $conditions[] = "tiempo_omision = ?";
+                    $params[] = $post->tiempo;
+                }
+                if (!empty($post->medida)) {
+                    $conditions[] = "medida = ?";
+                    $params[] = $post->medida;
+                }
+
+                if (!empty($post->inicio) && !empty($post->fin)) {
+                    $conditions[] = "f_registro_omision >= ? AND f_registro_omision <= ?";
+                    $params[] = $post->inicio;
+                    $params[] = $post->fin;
+                }
+
+                $sql = "SELECT * FROM vista_omisiones";
+                if (!empty($conditions)) {
+                    $sql .= " WHERE " . implode(" AND ", $conditions);
+                }
+
+                $sql .= " ORDER BY f_registro_omision DESC, h_registro_omision DESC";
+                $stmt = Conexion::Conectar()->prepare($sql);
+
+                if (!empty($params)) {
+                    // Bind parameters
+                    for ($i = 0; $i < count($params); $i++) {
+                        $stmt->bindParam($i + 1, $params[$i]);
+                    }
+                }
+
+        
+                $stmt->execute();
+                $resultado = $stmt->fetchAll(PDO::FETCH_OBJ);
+                return $resultado;
+            } catch (PDOException $th) {
+                return self::Mostrar();
+            }
+        }
+        
     }

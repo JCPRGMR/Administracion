@@ -7,7 +7,7 @@ function BuscarOmision(id) {
     request.onreadystatechange = function() {
         if (request.readyState == 4 && request.status == 200) {
             var datos = JSON.parse(request.responseText);
-            console.log(datos);
+            // console.log(datos);
             const [Personal, tiempo, medida, minutos, horas,
                 Ingreso, Salida, Marcacion, Justificacion,
                 Fecha_de_registro, btn_omision, botones, td_botones

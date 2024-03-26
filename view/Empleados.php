@@ -1,3 +1,5 @@
+<?php session_start()?>
+<?php (!isset($_SESSION["usuario"])) && header("Location: ../") ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
