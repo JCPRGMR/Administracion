@@ -20,7 +20,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style6.css">
+    <link rel="stylesheet" href="../css/style7.css">
     <link rel="stylesheet" href="../css/menus.css">
     <link rel="shortcut icon" href="../rtp_img/rtp_icono.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

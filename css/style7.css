@@ -1518,3 +1518,21 @@ input, textarea, button{
 .fz80{
     font-size: 80px;
 }
+/**
+ * LEYENDAS
+ */
+.leyenda_top + div{
+    background-color: rgba(0, 0, 0, 0.661);
+    color: white;
+    position: absolute;
+    bottom: -30px;
+    right: 50px;
+    font-size: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    white-space: nowrap;
+    visibility: hidden;
+}
+.leyenda_top:hover + div{
+    visibility: visible;
+}
