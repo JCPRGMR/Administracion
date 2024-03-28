@@ -7,14 +7,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style6.css">
+    <link rel="stylesheet" href="../css/style7.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="../rtp_img/rtp_icono.png" type="image/x-icon">
+    <title>Agregar personal</title>
 </head>
-<body class="f-row jc-c a-c m0 w100p h100vh">
-    <form action="../Request/Empleados.php" method="post" class="color7 p20 br10 f-col gap10">
-        <div class="mayus p20 color5 br10 negrita">
-            Registrar empleado
+<body class="f-row jc-c a-c m0 w100p h100vh color7">
+    <form action="../Request/Empleados.php" method="post" class="color6 p20 br10 f-col gap10">
+        <div class="mayus p20 color7 white br10 negrita">
+            Registrar nuevo personal
             <a href="<?= ($_GET["back"] == "control") ? 'Asistencia.php' : 'Omisiones.php' ; ?>" class="p10 color4 br10 white pointer">
                 Cancelar
             </a>
@@ -27,7 +28,6 @@
             <option value="SANTA CRUZ">Santa Cruz</option>
             <option value="COCHABAMBA">Cochabamba</option>
             <option value="BENI">Beni</option>
-
             <option value="PANDO">Pando</option>
             <option value="TARIJA">Tarija</option>
             <option value="ORURO">Oruro</option>

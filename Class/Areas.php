@@ -24,4 +24,11 @@
                 throw $th;
             }
         }
+        public static function Des_area(){
+            try {
+                $sql = "SELECT des_area FROM areas WHERE id_area = ?";
+            } catch (PDOException $th) {
+                throw $th;
+            }
+        }
     }

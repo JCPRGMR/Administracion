@@ -35,7 +35,7 @@
                         <th class="p10 fz14">Ciudad</th>
                         <th class="p10 fz14 relative f-row jc-c">
                             Personal
-                            <?php if ($_SESSION["usuario"]->des_rol === "Administrador") : ?>
+                            <?php if ($_SESSION["usuario"]->des_rol === "Administrador" || $_SESSION["usuario"]->des_rol === "Usuario") : ?>
                                 <a class="color1 absolute p5 br5 top0 white derecha30 top5 leyenda_top" href="Empleados.php?back=omision">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
                                         <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
@@ -72,7 +72,7 @@
                             <div class="relative index100">
                                 <input type="radio" name="empleados" id="sin_empleado" class="v-hidden absolute">
                                 <div class="absolute f-col br10 overflow-auto h200px min-content-w v-hidden" id="SelectPersonal">
-                                    <?php foreach (Empleados::Options() as $item) : ?>
+                                    <?php foreach (($_SESSION["usuario"]->des_rol === "Administrador") ? Empleados::Options() : Empleados::Mostrar_por_area($_SESSION["usuario"]->id_fk_area)  as $item) : ?>
                                         <input type="radio" name="empleados" value="<?= $item->id_empleado ?>" id="empleado_id_<?= $item->id_empleado ?>" class="v-hidden absolute check1">
                                         <label for="empleado_id_<?= $item->id_empleado ?>" onclick="ValorLabelAlInput(this)" class="left fz12 hover7 negrita w300px color6 p20 pointer"><?= $item->nombres ?> <?= $item->apellidos ?> | <?= $item->des_area ?> | <?= $item->des_cargo ?></label>
                                     <?php endforeach; ?>
@@ -131,7 +131,7 @@
                 <th class="p10 fz14">Registro</th>
             </thead>
             <tbody id="tbody" class="noselect">
-                <?php foreach (Omisiones::Mostrar() as $item) : ?>
+                <?php foreach (($_SESSION["usuario"]->des_rol === "Administrador") ? Omisiones::Mostrar() : Omisiones::Mostrar_por_area($_SESSION["usuario"]->id_fk_area)  as $item) : ?>
                     <tr class="white fz12 arial hover6 pointer" id="<?= $item->id_omision ?>" ondblclick="BuscarOmision(this.id)">
                         <td class="p5 center"><?= $item->des_ciudad ?></td>
                         <td class="p5 space-nw"><?= $item->nombres . ' ' . $item->apellidos ?></td>

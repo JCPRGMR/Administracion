@@ -44,6 +44,18 @@
                 throw $th;
             }
         }
+        public static function Mostrar_por_area($id_area){
+            try {
+                $sql = "SELECT * FROM vista_empleados WHERE id_fk_area = ? ORDER BY f_registro_empleado DESC";
+                $stmt = Conexion::Conectar()->prepare($sql);
+                $stmt->bindParam(1, $id_area, PDO::PARAM_STR);
+                $stmt->execute();
+                $resultado = $stmt->fetchAll(PDO::FETCH_OBJ);
+                return $resultado;
+            } catch (PDOException $th) {
+                throw $th;
+            }
+        }
         public static function Mostrar(){
             try {
                 $sql = "SELECT * FROM empleados ORDER BY f_registro_empleado DESC";
@@ -54,6 +66,5 @@
             } catch (PDOException $th) {
                 throw $th;
             }
-
         }
     }
