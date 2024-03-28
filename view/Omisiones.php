@@ -12,7 +12,7 @@
     }
 </style>
 <div class="color6 arial p10 br20 f-col h100p relative">
-    <div class="color7 p10 white br20 m10 f-row a-c jc-b">
+    <div class="color7 p10 white br20 m10 f-row a-c jc-b wrap">
         <div class="mayus negrita f-row a-c gap10">
             Omisiones y permisos de personal
             <?php if ($_SESSION["usuario"]->des_rol === "Reportes" || $_SESSION["usuario"]->des_rol === "Administrador") : ?>
@@ -43,7 +43,7 @@
                                     </svg>
                                 </a>
                                 <div class="absolute v-hidden">
-                                    Agregar usuario
+                                    Agregar personal
                                 </div>
                             <?php endif; ?>
                         </th>
