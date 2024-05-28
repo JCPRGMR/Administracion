@@ -1,3 +1,4 @@
+-- Active: 1709320591459@@127.0.0.1@3306@administracion
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
@@ -708,3 +709,10 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+SELECT * FROM vista_usuarios_roles;
+
+create view vista_usuarios_roles
+AS;
+SELECT * FROM empleados RIGHT join usuarios on empleados.id_empleado = usuarios.id_fk_empleado
