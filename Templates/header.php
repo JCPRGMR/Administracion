@@ -47,6 +47,13 @@
                 </li>
             </a>
             <?php endif;?>
+            <?php if($_SESSION["usuario"]->des_rol === "seguridad" || $_SESSION["usuario"]->des_rol === "Administrador"):?>
+            <a href="../View/Personal.php" class="white">
+                <li class="mayus p10 hover-white center fz12">
+                    Personal y usuarios del sistema
+                </li>
+            </a>
+            <?php endif;?>
         </ul>
     </nav>
     <main class="w100p f-col overflow-hidden border-box">
