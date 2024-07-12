@@ -58,7 +58,7 @@
         }
         public static function Mostrar(){
             try {
-                $sql = "SELECT * FROM empleados ORDER BY f_registro_empleado DESC";
+                $sql = "SELECT * FROM vista_empleados_usuarios ORDER BY f_registro_empleado DESC";
                 $stmt = Conexion::Conectar()->prepare($sql);
                 $stmt->execute();
                 $resultado = $stmt->fetchAll(PDO::FETCH_OBJ);

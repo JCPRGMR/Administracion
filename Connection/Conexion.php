@@ -3,10 +3,13 @@
     date_default_timezone_set("America/Caracas");
     Class Conexion{
         #DATOS DE LA BASE DE DATOS
-        private static string $host = "192.168.0.88";
         private static string $dbname = "administracion";
-        private static string $user = "master";
-        private static string $password = "master";
+        // private static string $host = "192.168.0.88";
+        // private static string $user = "master";
+        // private static string $password = "master";
+        private static string $host = "localhost";
+        private static string $user = "root";
+        private static string $password = "";
         
         #VALORES POR DEFECTO DEL TIEMPO REGISTRO
         public static $f_registro;
